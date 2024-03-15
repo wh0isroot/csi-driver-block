@@ -1,0 +1,11 @@
+---
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: block-csi
+provisioner: block.csi.k8s.io
+parameters:
+  block: /tmp/model
+  fstype: ext4
+reclaimPolicy: Retain
+volumeBindingMode: Immediate
